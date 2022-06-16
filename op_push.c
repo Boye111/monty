@@ -9,7 +9,7 @@
 void push(stack_t **stack, unsigned int param)
 {
 	stack_t *new_node = NULL;
-	
+
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 		handle_error(ERR_BAD_MALL, NULL, 0, NULL);
@@ -35,11 +35,11 @@ void push(stack_t **stack, unsigned int param)
 void push_queue(stack_t **stack, unsigned int param)
 {
 	stack_t *current = NULL, *new_node = NULL;
-	
+
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 		handle_error(ERR_BAD_MALL, NULL, 0, NULL);
-	
+
 	new_node->n = param;
 	if (*stack)
 	{

@@ -1,4 +1,7 @@
 #include "monty.h"
+#define  _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+
 stack_t *head = NULL;
 /**
  * main - The Monty Interpreter entry point
@@ -17,7 +20,6 @@ int main(int argn, char *args[])
 	filename = args[1];
 	check_args_num(argn);
 	fd = open_file(filename);
-	
 	while ((readed = getline(&buff, &line_len, fd)) != -1)
 	{
 		op_code = strtok(buff, "\t\n ");
@@ -43,3 +45,4 @@ int main(int argn, char *args[])
 	fclose(fd);
 	return (0);
 }
+
